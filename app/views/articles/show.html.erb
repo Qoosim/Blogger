@@ -6,6 +6,11 @@
   <%= link_to 'Edit', edit_article_path(@article) %>
 </p>
 
+<h4>Comments (<%= @article.comments.size %>)</h4>
+<%= render partial: 'shared/comment', collection: @article.comments %>
+
+<%= render partial: 'comments/form' %>
+
 <br />
 
 <%= link_to "<< Back to Articles List", articles_path %>
